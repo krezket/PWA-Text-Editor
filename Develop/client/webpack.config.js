@@ -23,11 +23,11 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: './index.js',
+        template: './index.html',
         title: 'JATE',
       }),
       new InjectManifest({
-        swSrc: path.join(process.cwd(), './src-sw.js'),
+        swSrc:'./src-sw.js',
         swDest: 'src-sw.js',
         exclude: [
           /\.map$/,
@@ -67,7 +67,7 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
-              plugins: ['babel/plugin-proposal-object-reset-spread', '@babel/transform-runtime'],
+              plugins: ['@babel/plugin-proposal-object-reset-spread', '@babel/transform-runtime'],
             },
           },
         },
